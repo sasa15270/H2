@@ -25,6 +25,7 @@ public class UserService {
 
     public Optional<User> login(String email, String password) {
         try {
+            System.out.println(email + " " + password);
             return userInterface.findByEmail(email)
                     .filter(u -> u.getPassword().equals(password));
         } catch (Exception e) {
